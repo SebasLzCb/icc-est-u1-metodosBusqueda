@@ -1,18 +1,17 @@
+import controllers.MetodosBusqueda;
+import models.Person;
+
 public class App {
-
-    MetodosBusqueda metodosBusqueda = new MetodosBusqueda();
-
     public static void main(String[] args) {
-        App app = new App();
-        int[] numeros = {4, 8, 15, 16, 23, 42};
+        Person[] personas = new Person[7];
+        personas[0] = new Person(101, "Juan");  
+        personas[1] = new Person(102, "Maria");
+        personas[2] = new Person(103, "Carlos");
+        personas[3] = new Person(104, "Ana");
+        personas[4] = new Person(105, "Luis");
+        personas[5] = new Person(106, "Sofia");
+        personas[6] = new Person(107, "Pedro");
 
-        int valorABuscar = 15;
-        int indice = app.metodosBusqueda.busquedaLineal(numeros, valorABuscar);
-
-        if (indice != -1) {
-            System.out.println("Elemento encontrado en el índice: " + indice);
-        } else {
-            System.out.println("Elemento no encontrado.");
-        }
+        MetodosBusqueda mB = new MetodosBusqueda(personas);
     }
 }
